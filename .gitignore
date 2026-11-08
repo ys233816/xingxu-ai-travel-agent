@@ -1,0 +1,11 @@
+.env.local
+.env.*.local
+node_modules/
+*.log
+tmp/
+output/
+
+# Generated or paid-run payloads stay local; curated markdown reports remain tracked.
+artifacts/evaluations/*.json
+artifacts/evaluations/*.csv
+artifacts/prd/

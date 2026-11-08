@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light" />
+    <meta name="description" content="行序 AI 旅行规划 Agent：可观察、可确认、可降级的旅行规划工作台。" />
+    <title>行序 AI · 旅行规划 Agent</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="行序 AI 首页">
+          <span class="brand-mark" data-icon="compass" aria-hidden="true"></span>
+          <span class="brand-copy">
+            <strong>行序</strong>
+            <span>Agent Studio</span>
+          </span>
+        </a>
+
+        <nav class="top-nav" aria-label="主导航">
+          <button class="nav-item is-active" type="button" aria-current="page">工作台</button>
+          <button class="nav-item" id="toolMapButton" type="button">
+            <span data-icon="map" aria-hidden="true"></span>
+            工具地图
+          </button>
+        </nav>
+
+        <div class="top-actions">
+          <span class="demo-flag" id="runtimeFlag"><span class="demo-dot"></span>LIVE · 检查中</span>
+          <button class="button button-ghost button-small" id="replayButton" type="button">
+            <span data-icon="replay" aria-hidden="true"></span>重播轨迹
+          </button>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <aside class="panel task-panel" aria-labelledby="taskTitle">
+          <div class="panel-scroll">
+            <div class="panel-label-row">
+              <span class="panel-label"><span data-icon="shield" aria-hidden="true"></span>TASK CARD</span>
+              <span class="status-badge status-neutral" id="taskStatus">待启动</span>
+            </div>
+            <h1 id="taskTitle">把不确定，<br />变成可确认。</h1>
+            <p class="panel-intro">告诉我地点、日期和同行人。行序会先核对天气与行程，再给出带来源、可逐项确认的旅行草稿。</p>
+
+            <div class="task-block task-goal">
+              <span class="task-index">01</span>
+              <div>
+                <h2>用户目标</h2>
+                <p>得到含天气、景点营业时间、逐日行程、真实餐饮、逐日双餐路线与酒店候选的可执行草稿。</p>
+              </div>
+            </div>
+            <div class="permission-mini-grid" id="taskPermissionGrid" aria-label="三色权限契约">
+              <article class="permission-mini-contract permission-allow" data-permission="auto">
+                <div class="permission-mini-head"><span class="contract-dot"></span><strong>自动执行</strong><small>6 项工具</small></div>
+                <p>天气、景点、餐饮、逐日双餐路线与酒店房型查询，并执行有限重试。</p>
+                <span class="contract-meta">留痕执行 · 最多 16 次 · 单查询最多 2 次尝试</span>
+              </article>
+              <article class="permission-mini-contract permission-confirm" data-permission="confirm">
+                <div class="permission-mini-head"><span class="contract-dot"></span><strong>需要用户确认</strong><small>4 个节点</small></div>
+                <p>选择酒店、调整住宿偏好、采用降级结果与保存草稿。</p>
+                <span class="contract-meta">不得代替用户确认</span>
+              </article>
+              <article class="permission-mini-contract permission-forbid" data-permission="forbidden">
+                <div class="permission-mini-head"><span class="contract-dot"></span><strong>完全禁止</strong><small>3 类能力</small></div>
+                <p>预订支付、读取他人数据、擅自发送外部消息。</p>
+                <span class="contract-meta">写工具未注册 · 调用为 0</span>
+              </article>
+            </div>
+            <div class="task-block task-proof">
+              <span class="task-index">05</span>
+              <div>
+                <h2>完成证据</h2>
+                <ul class="check-list">
+                  <li><span data-icon="check" aria-hidden="true"></span>可交付：逐日安排存在，缺失模块明确标注</li>
+                  <li><span data-icon="check" aria-hidden="true"></span>已完成：天气、逐日双餐路线、餐饮与酒店房态均有可信结果</li>
+                  <li><span data-icon="check" aria-hidden="true"></span>人工确认只接受草稿，不触发锁价或预订</li>
+                </ul>
+              </div>
+            </div>
+
+            <section class="constraint-section" aria-labelledby="constraintsTitle">
+              <div class="section-title-row">
+                <h2 id="constraintsTitle">本轮识别条件</h2>
+                <span class="section-note">自动解析</span>
+              </div>
+              <div class="constraint-grid" id="constraintGrid">
+                <div class="constraint skeleton"></div>
+                <div class="constraint skeleton"></div>
+                <div class="constraint skeleton"></div>
+                <div class="constraint skeleton"></div>
+              </div>
+            </section>
+
+            <details class="scenario-section">
+              <summary class="section-title-row">
+                <h2 id="scenarioTitle">面试演示分支</h2>
+                <span class="section-note">按需展开</span>
+              </summary>
+              <div class="scenario-list">
+                <button class="scenario-button" type="button" data-scenario="happy">
+                  <span class="scenario-icon scenario-success" data-icon="spark" aria-hidden="true"></span>
+                  <span><strong>完整规划</strong><small>六工具、逐日双餐路线与房型核验</small></span>
+                  <span class="scenario-arrow" data-icon="arrow" aria-hidden="true"></span>
+                </button>
+                <button class="scenario-button" type="button" data-scenario="missing">
+                  <span class="scenario-icon scenario-warning" data-icon="question" aria-hidden="true"></span>
+                  <span><strong>缺信息追问</strong><small>规划前停下，最多问 3 项</small></span>
+                  <span class="scenario-arrow" data-icon="arrow" aria-hidden="true"></span>
+                </button>
+                <button class="scenario-button" type="button" data-scenario="failure">
+                  <span class="scenario-icon scenario-danger" data-icon="pulse" aria-hidden="true"></span>
+                  <span><strong>天气范围外降级</strong><small>真实接口失败或覆盖不足时局部降级</small></span>
+                  <span class="scenario-arrow" data-icon="arrow" aria-hidden="true"></span>
+                </button>
+                <button class="scenario-button" type="button" data-scenario="boundary">
+                  <span class="scenario-icon scenario-lock" data-icon="lock" aria-hidden="true"></span>
+                  <span><strong>越界预订请求</strong><small>零工具调用，明确下一步</small></span>
+                  <span class="scenario-arrow" data-icon="arrow" aria-hidden="true"></span>
+                </button>
+                <button class="scenario-button scenario-adjust" type="button" data-scenario="adjust">
+                  <span class="scenario-icon scenario-info" data-icon="refresh" aria-hidden="true"></span>
+                  <span><strong>住宿偏好调整</strong><small>缩短首日通勤，保留全部景点</small></span>
+                  <span class="scenario-arrow" data-icon="arrow" aria-hidden="true"></span>
+                </button>
+              </div>
+            </details>
+          </div>
+        </aside>
+
+        <section class="panel stage-panel" aria-labelledby="stageTitle">
+          <div class="stage-header">
+            <div>
+              <div class="panel-label on-dark"><span data-icon="trace" aria-hidden="true"></span>LIVE TRACE</div>
+              <h2 id="stageTitle">开始你的行程</h2>
+            </div>
+            <span class="live-state" id="liveState"><span class="live-dot"></span>准备中</span>
+          </div>
+
+          <div class="composer-wrap">
+            <div class="prompt-intro">
+              <span class="prompt-kicker">TRIP BRIEF</span>
+              <h3>今天想去哪儿？</h3>
+              <p>一句话描述目的地、日期和同行人。越具体的偏好，越能减少后续调整。</p>
+            </div>
+            <div class="conversation-note">
+              <span data-icon="shield" aria-hidden="true"></span>
+              自动查询只读数据；确认只接受草稿，不会预订、付款或修改订单。
+            </div>
+            <form class="composer" id="composerForm">
+              <label class="sr-only" for="messageInput">输入旅行规划需求</label>
+              <textarea id="messageInput" name="message" rows="2" maxlength="600" placeholder="例如：后天去杭州玩 3 天，两个人，想少走路。"></textarea>
+              <div class="composer-footer">
+                <button class="prompt-example" id="samplePromptButton" type="button">
+                  填入杭州三日 · 少走路 · 本地菜
+                  <span data-icon="arrow" aria-hidden="true"></span>
+                </button>
+                <button class="send-button" id="sendButton" type="submit" aria-label="发送规划需求">
+                  <span data-icon="send" aria-hidden="true"></span>
+                  <span>生成行程草稿</span>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="trace-detail" id="traceDetail">
+            <div class="process-rail" aria-label="任务阶段">
+              <div class="process-step is-active" data-step="parse"><span>1</span>解析</div>
+              <div class="process-line"></div>
+              <div class="process-step" data-step="tools"><span>2</span>调用</div>
+              <div class="process-line"></div>
+              <div class="process-step" data-step="validate"><span>3</span>校验</div>
+              <div class="process-line"></div>
+              <div class="process-step" data-step="confirm"><span>4</span>确认</div>
+            </div>
+
+            <div class="trace-metrics" aria-label="任务执行指标">
+              <div><span>工具调用</span><strong id="toolCallMetric">0 / 16</strong></div>
+              <div><span>重试</span><strong id="retryMetric">0</strong></div>
+              <div><span>时延</span><strong id="latencyMetric">—</strong></div>
+              <div><span>模型轮次</span><strong id="roundMetric">0 / 8</strong></div>
+            </div>
+
+            <div class="trace-feed" id="traceFeed" aria-live="polite" aria-busy="true">
+              <div class="trace-empty">
+                <span class="trace-orbit" aria-hidden="true"><span></span></span>
+                <h3>等待你发起真实任务</h3>
+                <p>页面不会自动调用付费接口；这里将展示工具调用、观察结果、校验与人工确认点。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="panel output-panel" aria-labelledby="outputTitle">
+          <div class="output-header">
+            <div>
+              <div class="panel-label"><span data-icon="route" aria-hidden="true"></span>TRAVEL DRAFT</div>
+              <h2 id="outputTitle">行程方案</h2>
+            </div>
+            <div class="output-meta">
+              <span class="status-badge status-neutral" id="planState">等待生成</span>
+              <span class="version-pill" id="planVersion">v0</span>
+            </div>
+          </div>
+
+          <div class="output-scroll" id="planRoot" aria-live="polite">
+            <div class="plan-placeholder">
+              <span class="placeholder-illustration" data-icon="map-pin" aria-hidden="true"></span>
+              <h3>方案将在这里展开</h3>
+              <p>完成工具调用和规则校验后，天气、逐日安排、路线与酒店候选会按证据顺序出现。</p>
+            </div>
+          </div>
+
+          <div class="output-actions" id="outputActions">
+            <button class="button button-secondary" id="copyButton" type="button" disabled>
+              <span data-icon="copy" aria-hidden="true"></span>复制方案
+            </button>
+            <button class="button button-primary" id="confirmButton" type="button" disabled>
+              <span data-icon="check-circle" aria-hidden="true"></span>确认这版草稿
+            </button>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <dialog class="modal modal-wide" id="toolMapDialog" aria-labelledby="toolMapTitle">
+      <div class="modal-head">
+        <div>
+          <span class="panel-label"><span data-icon="map" aria-hidden="true"></span>TOOL MAP</span>
+          <h2 id="toolMapTitle">工具地图与权限</h2>
+          <p>权限由服务端注册的白名单控制，Prompt 只负责解释边界。</p>
+        </div>
+        <button class="icon-button modal-close" type="button" data-close-dialog="toolMapDialog" aria-label="关闭工具地图">
+          <span data-icon="close" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="tool-summary">
+        <div><strong id="allowedToolCount">6</strong><span>可用只读/内部工具</span></div>
+        <div><strong id="confirmGateCount">4</strong><span>需要用户确认</span></div>
+        <div><strong id="forbiddenToolCount">3</strong><span>完全禁止能力</span></div>
+      </div>
+      <div class="permission-contract-grid" id="permissionContractGrid" aria-label="三色权限契约详情">
+        <div class="permission-contract-card permission-allow skeleton skeleton-line"></div>
+        <div class="permission-contract-card permission-confirm skeleton skeleton-line"></div>
+        <div class="permission-contract-card permission-forbid skeleton skeleton-line"></div>
+      </div>
+      <div class="table-wrap">
+        <table class="tool-table">
+          <thead>
+            <tr><th>工具</th><th>权限</th><th>允许范围</th><th>副作用 / 风险</th></tr>
+          </thead>
+          <tbody id="toolTableBody"></tbody>
+        </table>
+      </div>
+      <div class="boundary-callout">
+        <span data-icon="shield" aria-hidden="true"></span>
+        <div><strong>硬边界示例</strong><p>“直接订酒店并付款”在解析阶段被拦截，服务端没有注册该写工具，因此轨迹中的工具调用数保持为 0。</p></div>
+      </div>
+      <section class="evidence-map-section" aria-labelledby="evidenceMapTitle">
+        <div class="evidence-map-head">
+          <div><span class="panel-label"><span data-icon="trace" aria-hidden="true"></span>EVIDENCE MAP</span><h3 id="evidenceMapTitle">演示分支 → 轨迹证据 → 评测指标</h3></div>
+          <span class="section-note">固定契约</span>
+        </div>
+        <div class="evidence-map-list" id="evidenceMapList">
+          <div class="skeleton skeleton-line"></div>
+          <div class="skeleton skeleton-line"></div>
+          <div class="skeleton skeleton-line"></div>
+        </div>
+      </section>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

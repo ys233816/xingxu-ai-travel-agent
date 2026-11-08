@@ -1,0 +1,27 @@
+{
+  "name": "xingxu-travel-agent",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "A transparent live-data travel planning agent prototype.",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test test/*.test.js",
+    "eval:live": "node scripts/run-live-eval.js",
+    "eval:cases": "node scripts/export-live-eval-cases.js",
+    "eval:review": "node scripts/create-manual-eval-review.js",
+    "eval:review:finalize": "node scripts/check-manual-eval-review.js",
+    "judge:prepare": "node scripts/prepare-judge-calibration.js",
+    "judge:review:markdown": "node scripts/create-judge-calibration-review.js",
+    "judge:review": "node scripts/review-judge-calibration.js",
+    "judge:run": "node scripts/run-llm-judge.js",
+    "judge:batch": "node scripts/run-llm-judge-batch.js",
+    "judge:report": "node scripts/create-llm-judge-report.js",
+    "test:visual": "node test/visual-check.mjs",
+    "check": "node --check server.js && node --check scripts/run-live-eval.js && node --check scripts/export-live-eval-cases.js && node --check scripts/create-manual-eval-review.js && node --check scripts/check-manual-eval-review.js && node --check scripts/prepare-judge-calibration.js && node --check scripts/create-judge-calibration-review.js && node --check scripts/review-judge-calibration.js && node --check scripts/run-llm-judge.js && node --check scripts/run-llm-judge-batch.js && node --check scripts/create-llm-judge-report.js && node --check src/config.js && node --check src/http-client.js && node --check src/model-client.js && node --check src/live-agent.js && node --check src/live-eval-suite.js && node --check src/eval-review.js && node --check src/llm-judge.js && node --check src/csv.js && node --check src/tools.js && node --check src/permissions.js && node --check public/app.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

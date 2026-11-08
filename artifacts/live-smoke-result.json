@@ -1,0 +1,813 @@
+{
+  "runId": "live-be50158b-fa86-4ddd-8726-865a7ad59df9",
+  "state": "complete",
+  "taskStatus": "部分完成",
+  "message": "已完成真实数据查询，部分价格或路线暂时无法验证。",
+  "nextStep": "重试暂缺模块，或查看当前部分方案。",
+  "constraints": {
+    "destination": "杭州",
+    "startDate": "2026-11-04",
+    "days": 3,
+    "travelers": 2,
+    "budget": 5000,
+    "currency": "CNY",
+    "preferences": [
+      "情侣出行",
+      "少走路",
+      "本地菜"
+    ]
+  },
+  "plan": {
+    "id": "live-plan-1793634888677",
+    "version": 1,
+    "title": "杭州 · 真实数据 3 日",
+    "subtitle": "天气与 POI 来自实时接口；酒店房价未验证时不会生成估算价格",
+    "dataMode": "live",
+    "updatedAt": "2026-11-02T15:54:48.677Z",
+    "constraints": {
+      "destination": "杭州",
+      "startDate": "2026-11-04",
+      "days": 3,
+      "travelers": 2,
+      "budget": 5000,
+      "currency": "CNY",
+      "preferences": [
+        "情侣出行",
+        "少走路",
+        "本地菜"
+      ]
+    },
+    "weather": [
+      {
+        "date": "2026-11-04",
+        "condition": "大雨",
+        "low": 16,
+        "high": 21,
+        "precipitation": "14.2%",
+        "source": "和风天气",
+        "updatedAt": "2026-11-02T23:53+08:00",
+        "status": "已查询"
+      },
+      {
+        "date": "2026-11-05",
+        "condition": "多云",
+        "low": 13,
+        "high": 22,
+        "precipitation": "0.0%",
+        "source": "和风天气",
+        "updatedAt": "2026-11-02T23:53+08:00",
+        "status": "已查询"
+      },
+      {
+        "date": "2026-11-06",
+        "condition": "晴",
+        "low": 14,
+        "high": 22,
+        "precipitation": "0.0%",
+        "source": "和风天气",
+        "updatedAt": "2026-11-02T23:53+08:00",
+        "status": "已查询"
+      }
+    ],
+    "weatherUnavailable": false,
+    "weatherCoverage": {
+      "requestedDays": 3,
+      "returnedDays": 3,
+      "complete": true
+    },
+    "days": [
+      {
+        "day": 1,
+        "date": "2026-11-04",
+        "title": "杭州 · 第 1 天",
+        "weatherHint": "大雨 16–21℃",
+        "items": [
+          {
+            "time": "上午",
+            "type": "景点",
+            "title": "钱江世纪公园",
+            "note": "秋韵路a7-2号 · 开放：24小时营业 · 票价需确认"
+          },
+          {
+            "time": "午餐",
+            "type": "自行选择",
+            "title": "在当天景点附近自行选择餐厅",
+            "note": "系统未查询餐厅价格，不计入预算"
+          },
+          {
+            "time": "前往下一景点",
+            "type": "驾车",
+            "title": "钱江世纪公园 → 清河坊历史文化特色街区",
+            "note": "高德实测约 21 分钟，10378 米"
+          },
+          {
+            "time": "下午",
+            "type": "景点",
+            "title": "清河坊历史文化特色街区",
+            "note": "河坊街180号 · 开放：24小时营业 · 票价需确认"
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-11-05",
+        "title": "杭州 · 第 2 天",
+        "weatherHint": "多云 13–22℃",
+        "items": [
+          {
+            "time": "上午",
+            "type": "景点",
+            "title": "五柳巷历史街区",
+            "note": "小营街道斗富二桥西河下9号附近 · 开放：24小时营业 · 票价需确认"
+          },
+          {
+            "time": "午餐",
+            "type": "自行选择",
+            "title": "在当天景点附近自行选择餐厅",
+            "note": "系统未查询餐厅价格，不计入预算"
+          },
+          {
+            "time": "下午",
+            "type": "景点",
+            "title": "钱江新城灯光秀",
+            "note": "新业路39号(市民中心地铁站M1口或N2口) · 开放： · 票价需确认"
+          }
+        ]
+      },
+      {
+        "day": 3,
+        "date": "2026-11-06",
+        "title": "杭州 · 第 3 天",
+        "weatherHint": "晴 14–22℃",
+        "items": [
+          {
+            "time": "上午",
+            "type": "景点",
+            "title": "胡雪岩旧居",
+            "note": "元宝街18号 · 开放： · 票价需确认"
+          },
+          {
+            "time": "午餐",
+            "type": "自行选择",
+            "title": "在当天景点附近自行选择餐厅",
+            "note": "系统未查询餐厅价格，不计入预算"
+          },
+          {
+            "time": "下午",
+            "type": "景点",
+            "title": "吴山景区",
+            "note": "清波街道吴山广场2号杭州吴山艺术团附近 · 开放：07:30-18:00 · 票价需确认"
+          }
+        ]
+      }
+    ],
+    "attractions": [
+      {
+        "id": "B0FFHJTKKP",
+        "name": "钱江世纪公园",
+        "area": "萧山区",
+        "address": "秋韵路a7-2号",
+        "location": "120.237194,30.244685",
+        "open": "24小时营业",
+        "rating": "4.7",
+        "ticket": null,
+        "status": "真实 POI · 票价需确认",
+        "source": "高德地图"
+      },
+      {
+        "id": "B023B07SJZ",
+        "name": "清河坊历史文化特色街区",
+        "area": "上城区",
+        "address": "河坊街180号",
+        "location": "120.169899,30.239827",
+        "open": "24小时营业",
+        "rating": "4.7",
+        "ticket": null,
+        "status": "真实 POI · 票价需确认",
+        "source": "高德地图"
+      },
+      {
+        "id": "B0FFFA3PD5",
+        "name": "五柳巷历史街区",
+        "area": "上城区",
+        "address": "小营街道斗富二桥西河下9号附近",
+        "location": "120.176615,30.242162",
+        "open": "24小时营业",
+        "rating": "4.6",
+        "ticket": null,
+        "status": "真实 POI · 票价需确认",
+        "source": "高德地图"
+      },
+      {
+        "id": "B0FFHKQ7F5",
+        "name": "钱江新城灯光秀",
+        "area": "上城区",
+        "address": "新业路39号(市民中心地铁站M1口或N2口)",
+        "location": "120.215428,30.244481",
+        "open": "",
+        "rating": "4.6",
+        "ticket": null,
+        "status": "真实 POI · 票价需确认",
+        "source": "高德地图"
+      },
+      {
+        "id": "B023B0284D",
+        "name": "胡雪岩旧居",
+        "area": "上城区",
+        "address": "元宝街18号",
+        "location": "120.172906,30.237273",
+        "open": "",
+        "rating": "4.6",
+        "ticket": null,
+        "status": "真实 POI · 票价需确认",
+        "source": "高德地图"
+      },
+      {
+        "id": "B023B17WXC",
+        "name": "吴山景区",
+        "area": "上城区",
+        "address": "清波街道吴山广场2号杭州吴山艺术团附近",
+        "location": "120.165134,30.234120",
+        "open": "07:30-18:00",
+        "rating": "4.6",
+        "ticket": null,
+        "status": "真实 POI · 票价需确认",
+        "source": "高德地图"
+      },
+      {
+        "id": "B023B015D8",
+        "name": "鼓楼",
+        "area": "上城区",
+        "address": "中山南路501号(近十五奎巷)",
+        "location": "120.171386,30.237994",
+        "open": "",
+        "rating": "4.7",
+        "ticket": null,
+        "status": "真实 POI · 票价需确认",
+        "source": "高德地图"
+      },
+      {
+        "id": "B023B13L9M",
+        "name": "杭州西湖风景名胜区",
+        "area": "西湖区",
+        "address": "西湖街道龙井路1号",
+        "location": "120.121358,30.222692",
+        "open": "24小时营业",
+        "rating": "4.9",
+        "ticket": null,
+        "status": "真实 POI · 票价需确认",
+        "source": "高德地图"
+      },
+      {
+        "id": "B0HB399RBD",
+        "name": "城市阳台江堤步道",
+        "area": "上城区",
+        "address": "四季青街道之江路1122号",
+        "location": "120.219288,30.245150",
+        "open": "24小时营业",
+        "rating": "4.5",
+        "ticket": null,
+        "status": "真实 POI · 票价需确认",
+        "source": "高德地图"
+      },
+      {
+        "id": "B023B05MLT",
+        "name": "杭州西湖风景名胜区-湖滨公园",
+        "area": "上城区",
+        "address": "龙井路1号杭州西湖风景名胜区内(东北角)",
+        "location": "120.158818,30.256583",
+        "open": "24小时营业",
+        "rating": "4.7",
+        "ticket": null,
+        "status": "真实 POI · 票价需确认",
+        "source": "高德地图"
+      }
+    ],
+    "routes": [
+      {
+        "from": "钱江世纪公园",
+        "to": "清河坊历史文化特色街区",
+        "minutes": 21,
+        "distanceMeters": 10378,
+        "mode": "驾车",
+        "verified": true,
+        "source": "高德地图"
+      }
+    ],
+    "routesUnavailable": false,
+    "hotels": [
+      {
+        "id": "B0FFHDP24G",
+        "name": "可见时光·望达斯旅舍(杭州西湖湖滨河坊街店)",
+        "area": "上城区",
+        "address": "小井巷21号(吴山广场地铁站D口步行360米)",
+        "location": "120.168087,30.239811",
+        "room": "具体房型需在官方渠道确认",
+        "nightlyRate": null,
+        "rating": "4.2",
+        "distance": "小井巷21号(吴山广场地铁站D口步行360米)",
+        "status": "真实 POI · 房价暂不可用",
+        "source": "高德地图",
+        "updatedAt": "2026-11-02T15:54:48.551Z",
+        "selected": false
+      },
+      {
+        "id": "B023B14BD7",
+        "name": "布丁精选酒店(杭州武林广场西湖文化广场地铁站店)",
+        "area": "拱墅区",
+        "address": "湖墅南路96号",
+        "location": "120.156187,30.278191",
+        "room": "具体房型需在官方渠道确认",
+        "nightlyRate": null,
+        "rating": "4.6",
+        "distance": "湖墅南路96号",
+        "status": "真实 POI · 房价暂不可用",
+        "source": "高德地图",
+        "updatedAt": "2026-11-02T15:54:48.551Z",
+        "selected": false
+      },
+      {
+        "id": "B0FFFAKA5A",
+        "name": "柠莱酒店(杭州店)",
+        "area": "钱塘区",
+        "address": "文渊路295号文盛公寓",
+        "location": "120.337429,30.319321",
+        "room": "具体房型需在官方渠道确认",
+        "nightlyRate": null,
+        "rating": "4.0",
+        "distance": "文渊路295号文盛公寓",
+        "status": "真实 POI · 房价暂不可用",
+        "source": "高德地图",
+        "updatedAt": "2026-11-02T15:54:48.551Z",
+        "selected": false
+      },
+      {
+        "id": "B023B08QQL",
+        "name": "杭州尼可城市酒店",
+        "area": "上城区",
+        "address": "中山中路288号(与西湖900米河访街800米定安路地铁口380米)",
+        "location": "120.170730,30.249460",
+        "room": "具体房型需在官方渠道确认",
+        "nightlyRate": null,
+        "rating": "4.5",
+        "distance": "中山中路288号(与西湖900米河访街800米定安路地铁口380米)",
+        "status": "真实 POI · 房价暂不可用",
+        "source": "高德地图",
+        "updatedAt": "2026-11-02T15:54:48.551Z",
+        "selected": false
+      },
+      {
+        "id": "B0MDT5BZHS",
+        "name": "格美酒店",
+        "area": "滨江区",
+        "address": "浦沿街道杨家墩商业街8号楼(浙江警察学院南)",
+        "location": "120.153208,30.170086",
+        "room": "具体房型需在官方渠道确认",
+        "nightlyRate": null,
+        "rating": "3.2",
+        "distance": "浦沿街道杨家墩商业街8号楼(浙江警察学院南)",
+        "status": "真实 POI · 房价暂不可用",
+        "source": "高德地图",
+        "updatedAt": "2026-11-02T15:54:48.551Z",
+        "selected": false
+      },
+      {
+        "id": "B0MD4HIF0A",
+        "name": "如家酒店(杭州逸盛路地铁站店)",
+        "area": "余杭区",
+        "address": "良渚街道逸盛路53号",
+        "location": "120.107603,30.378608",
+        "room": "具体房型需在官方渠道确认",
+        "nightlyRate": null,
+        "rating": "4.8",
+        "distance": "良渚街道逸盛路53号",
+        "status": "真实 POI · 房价暂不可用",
+        "source": "高德地图",
+        "updatedAt": "2026-11-02T15:54:48.551Z",
+        "selected": true
+      },
+      {
+        "id": "B0FFGQ52IO",
+        "name": "时运商务酒店",
+        "area": "拱墅区",
+        "address": "丰庆路与灯彩街交叉口都市水乡水映苑38-5号",
+        "location": "120.095786,30.328457",
+        "room": "具体房型需在官方渠道确认",
+        "nightlyRate": null,
+        "rating": "4.3",
+        "distance": "丰庆路与灯彩街交叉口都市水乡水映苑38-5号",
+        "status": "真实 POI · 房价暂不可用",
+        "source": "高德地图",
+        "updatedAt": "2026-11-02T15:54:48.551Z",
+        "selected": false
+      },
+      {
+        "id": "B023B14DR8",
+        "name": "布丁严选酒店(杭州火车东站艮山西路店)",
+        "area": "上城区",
+        "address": "艮山西路200号(艮秋立交桥西北侧)距闸弄口新村公交站向东200米工商银行旁",
+        "location": "120.197168,30.276680",
+        "room": "具体房型需在官方渠道确认",
+        "nightlyRate": null,
+        "rating": "4.3",
+        "distance": "艮山西路200号(艮秋立交桥西北侧)距闸弄口新村公交站向东200米工商银行旁",
+        "status": "真实 POI · 房价暂不可用",
+        "source": "高德地图",
+        "updatedAt": "2026-11-02T15:54:48.551Z",
+        "selected": false
+      }
+    ],
+    "hotelsUnavailable": false,
+    "selectedHotel": {
+      "id": "B0MD4HIF0A",
+      "name": "如家酒店(杭州逸盛路地铁站店)",
+      "area": "余杭区",
+      "address": "良渚街道逸盛路53号",
+      "location": "120.107603,30.378608",
+      "room": "具体房型需在官方渠道确认",
+      "nightlyRate": null,
+      "rating": "4.8",
+      "distance": "良渚街道逸盛路53号",
+      "status": "真实 POI · 房价暂不可用",
+      "source": "高德地图",
+      "updatedAt": "2026-11-02T15:54:48.551Z"
+    },
+    "budget": {
+      "currency": "CNY",
+      "categories": [
+        {
+          "id": "hotel",
+          "label": "住宿",
+          "amount": null,
+          "detail": "高德只提供真实酒店 POI，没有可验证房价",
+          "status": "暂不可用",
+          "isIncluded": false
+        },
+        {
+          "id": "meals",
+          "label": "餐饮",
+          "amount": 0,
+          "detail": "未查询具体餐厅和菜单价格",
+          "status": "未计入",
+          "isIncluded": false
+        },
+        {
+          "id": "transport",
+          "label": "当地交通",
+          "amount": 0,
+          "detail": "未取得实际车次和票价",
+          "status": "未计入",
+          "isIncluded": false
+        },
+        {
+          "id": "activities",
+          "label": "门票与活动",
+          "amount": null,
+          "detail": "高德 POI 未提供可验证票价",
+          "status": "暂不可用",
+          "isIncluded": false
+        },
+        {
+          "id": "buffer",
+          "label": "机动费用",
+          "amount": 0,
+          "detail": "无法提前确定，不写入总预算",
+          "status": "未计入",
+          "isIncluded": false
+        }
+      ],
+      "excludedCategories": [
+        {
+          "id": "hotel",
+          "label": "住宿",
+          "amount": null,
+          "detail": "高德只提供真实酒店 POI，没有可验证房价",
+          "status": "暂不可用",
+          "isIncluded": false
+        },
+        {
+          "id": "meals",
+          "label": "餐饮",
+          "amount": 0,
+          "detail": "未查询具体餐厅和菜单价格",
+          "status": "未计入",
+          "isIncluded": false
+        },
+        {
+          "id": "transport",
+          "label": "当地交通",
+          "amount": 0,
+          "detail": "未取得实际车次和票价",
+          "status": "未计入",
+          "isIncluded": false
+        },
+        {
+          "id": "activities",
+          "label": "门票与活动",
+          "amount": null,
+          "detail": "高德 POI 未提供可验证票价",
+          "status": "暂不可用",
+          "isIncluded": false
+        },
+        {
+          "id": "buffer",
+          "label": "机动费用",
+          "amount": 0,
+          "detail": "无法提前确定，不写入总预算",
+          "status": "未计入",
+          "isIncluded": false
+        }
+      ],
+      "subtotal": 0,
+      "total": 0,
+      "budgetLimit": 5000,
+      "remaining": 5000,
+      "isComplete": false,
+      "withinBudget": true,
+      "hasRisk": true,
+      "riskNote": "预算缺少酒店、交通、餐饮和门票的可验证价格，无法判断总花费是否在预算内。",
+      "accountingNote": "未计入：住宿、餐饮、当地交通、门票与活动、机动费用。合计与账面余额均不包含这些费用。"
+    },
+    "lock": {
+      "attractions": false,
+      "hotel": false
+    },
+    "notes": [
+      "天气来自和风天气，地点和路线来自高德地图。",
+      "高德酒店 POI 不提供已验证房价、房态或房型，相关项目不进入预算。",
+      "未计入：住宿、餐饮、当地交通、门票与活动、机动费用。合计与账面余额均不包含这些费用。",
+      "预算缺少酒店、交通、餐饮和门票的可验证价格，无法判断总花费是否在预算内。",
+      "缺失字段保持暂不可用，系统不会用估算值或模型记忆补齐。"
+    ],
+    "refreshWarnings": [],
+    "checks": [
+      {
+        "label": "真实数据标识",
+        "pass": true,
+        "detail": "天气与地点数据来自真实接口，不使用 Mock 回填"
+      },
+      {
+        "label": "逐日行程存在",
+        "pass": true,
+        "detail": "3 天行程来自已查询 POI"
+      },
+      {
+        "label": "预算计算一致",
+        "pass": true,
+        "detail": "分类合计 0 元 = 已计入合计 0 元"
+      },
+      {
+        "label": "只读授权",
+        "pass": true,
+        "detail": "未注册预订、支付、退改或读取他人数据的工具"
+      }
+    ]
+  },
+  "events": [
+    {
+      "id": "evt-1",
+      "type": "goal",
+      "title": "接收真实旅行规划",
+      "detail": "2026年11月4日去杭州玩3天，两个人，总预算5000元，情侣出行，想少走路，也想去吃本地菜。",
+      "time": "2026-11-02T15:54:43.38Z",
+      "status": "running",
+      "dataMode": "live"
+    },
+    {
+      "id": "evt-2",
+      "type": "model_decision",
+      "title": "模型完成需求解析与工具计划",
+      "detail": "状态：ready；工具：weather.forecast、poi.searchAttractions、hotel.search",
+      "time": "2026-11-02T15:54:47.841Z",
+      "status": "success",
+      "modelRequestId": "e975c86b-1b0a-4a96-9c8b-ec0b326e0cef"
+    },
+    {
+      "id": "evt-3",
+      "type": "plan",
+      "title": "执行真实工具计划",
+      "detail": "模型选择工具；代码执行白名单校验、真实查询、预算计算与规则校验",
+      "time": "2026-11-02T15:54:47.841Z",
+      "status": "running",
+      "affectedModules": [
+        "weather",
+        "itinerary",
+        "routes",
+        "hotel",
+        "budget"
+      ]
+    },
+    {
+      "id": "evt-4",
+      "type": "tool_call",
+      "title": "poi.searchAttractions · 第 1 次",
+      "detail": "{\"destination\":\"杭州\",\"preferences\":[\"情侣出行\",\"少走路\",\"本地菜\"]}",
+      "time": "2026-11-02T15:54:47.842Z",
+      "toolId": "poi.searchAttractions",
+      "permission": "只读",
+      "attempt": 1
+    },
+    {
+      "id": "evt-5",
+      "type": "observation",
+      "title": "真实接口返回",
+      "detail": "高德返回 10 个真实景点 POI",
+      "time": "2026-11-02T15:54:48.122Z",
+      "toolId": "poi.searchAttractions",
+      "source": "高德地图",
+      "status": "success",
+      "dataMode": "live"
+    },
+    {
+      "id": "evt-6",
+      "type": "tool_call",
+      "title": "weather.forecast · 第 1 次",
+      "detail": "{\"destination\":\"杭州\",\"startDate\":\"2026-11-04\",\"days\":3,\"location\":\"120.237194,30.244685\"}",
+      "time": "2026-11-02T15:54:48.122Z",
+      "toolId": "weather.forecast",
+      "permission": "只读",
+      "attempt": 1
+    },
+    {
+      "id": "evt-7",
+      "type": "observation",
+      "title": "真实接口返回",
+      "detail": "和风天气返回 3 天真实预报",
+      "time": "2026-11-02T15:54:48.308Z",
+      "toolId": "weather.forecast",
+      "source": "和风天气",
+      "status": "success",
+      "dataMode": "live"
+    },
+    {
+      "id": "evt-8",
+      "type": "tool_call",
+      "title": "hotel.search · 第 1 次",
+      "detail": "{\"destination\":\"杭州\",\"travelers\":2}",
+      "time": "2026-11-02T15:54:48.308Z",
+      "toolId": "hotel.search",
+      "permission": "只读",
+      "attempt": 1
+    },
+    {
+      "id": "evt-9",
+      "type": "observation",
+      "title": "真实接口返回",
+      "detail": "高德返回 8 个真实酒店 POI；未提供可验证房价",
+      "time": "2026-11-02T15:54:48.551Z",
+      "toolId": "hotel.search",
+      "source": "高德地图",
+      "status": "success",
+      "dataMode": "live"
+    },
+    {
+      "id": "evt-10",
+      "type": "tool_call",
+      "title": "route.plan · 第 1 次",
+      "detail": "{\"origin\":\"120.237194,30.244685\",\"destination\":\"120.169899,30.239827\",\"originName\":\"钱江世纪公园\",\"destinationName\":\"清河坊历史文化特色街区\",\"mode\":\"driving\"}",
+      "time": "2026-11-02T15:54:48.551Z",
+      "toolId": "route.plan",
+      "permission": "只读",
+      "attempt": 1
+    },
+    {
+      "id": "evt-11",
+      "type": "observation",
+      "title": "真实接口返回",
+      "detail": "高德返回 1 段真实驾车路线",
+      "time": "2026-11-02T15:54:48.677Z",
+      "toolId": "route.plan",
+      "source": "高德地图",
+      "status": "success",
+      "dataMode": "live"
+    },
+    {
+      "id": "evt-12",
+      "type": "tool_call",
+      "title": "计算真实数据预算",
+      "detail": "{\"selectedHotel\":\"如家酒店(杭州逸盛路地铁站店)\"}",
+      "time": "2026-11-02T15:54:48.677Z",
+      "toolId": "budget.calculate",
+      "permission": "内部计算",
+      "status": "success"
+    },
+    {
+      "id": "evt-13",
+      "type": "observation",
+      "title": "预算计算完成",
+      "detail": "未计入：住宿、餐饮、当地交通、门票与活动、机动费用。合计与账面余额均不包含这些费用。",
+      "time": "2026-11-02T15:54:48.677Z",
+      "toolId": "budget.calculate",
+      "status": "success"
+    },
+    {
+      "id": "evt-14",
+      "type": "validation",
+      "title": "真实数据标识",
+      "detail": "天气与地点数据来自真实接口，不使用 Mock 回填",
+      "time": "2026-11-02T15:54:48.677Z",
+      "status": "success"
+    },
+    {
+      "id": "evt-15",
+      "type": "validation",
+      "title": "逐日行程存在",
+      "detail": "3 天行程来自已查询 POI",
+      "time": "2026-11-02T15:54:48.677Z",
+      "status": "success"
+    },
+    {
+      "id": "evt-16",
+      "type": "validation",
+      "title": "预算计算一致",
+      "detail": "分类合计 0 元 = 已计入合计 0 元",
+      "time": "2026-11-02T15:54:48.677Z",
+      "status": "success"
+    },
+    {
+      "id": "evt-17",
+      "type": "validation",
+      "title": "只读授权",
+      "detail": "未注册预订、支付、退改或读取他人数据的工具",
+      "time": "2026-11-02T15:54:48.677Z",
+      "status": "success"
+    },
+    {
+      "id": "evt-18",
+      "type": "degrade",
+      "title": "真实数据不完整",
+      "detail": "缺失模块明确标记暂不可用，未用估算值或模型记忆补齐。",
+      "time": "2026-11-02T15:54:48.677Z",
+      "status": "warning"
+    },
+    {
+      "id": "evt-19",
+      "type": "human_gate",
+      "title": "等待用户确认",
+      "detail": "当前只是规划草稿，没有执行预订、支付或订单修改。",
+      "time": "2026-11-02T15:54:48.677Z",
+      "status": "waiting",
+      "action": "confirm_draft"
+    }
+  ],
+  "dataMode": "live",
+  "metrics": {
+    "toolCalls": 5,
+    "retries": 0,
+    "modelRounds": 1,
+    "elapsedMs": 5298,
+    "maxToolCalls": 12,
+    "usage": {
+      "inputTokens": 626,
+      "outputTokens": 627
+    },
+    "estimatedCost": null
+  },
+  "provenance": {
+    "dataMode": "live",
+    "modelRequestIds": [
+      "e975c86b-1b0a-4a96-9c8b-ec0b326e0cef"
+    ],
+    "toolSources": [
+      "高德地图",
+      "和风天气"
+    ]
+  },
+  "scenarioId": "happy",
+  "evidenceAudit": {
+    "scenarioId": "happy",
+    "label": "完整规划",
+    "objective": "证明四模块交付不是一次偶然成功，而是必要步骤齐全。",
+    "checks": [
+      {
+        "label": "必要事件齐全",
+        "detail": "目标、计划、工具、校验、确认",
+        "pass": true
+      },
+      {
+        "label": "工具轨迹合规",
+        "detail": "5 次调用，均在只读 / 内部白名单内",
+        "pass": true
+      },
+      {
+        "label": "四模块交付",
+        "detail": "天气、逐日行程、酒店与预算均有结果",
+        "pass": true
+      },
+      {
+        "label": "预算计算一致",
+        "detail": "分类合计 0 元 = 预算合计 0 元",
+        "pass": true
+      }
+    ],
+    "passed": 4,
+    "total": 4,
+    "complete": true,
+    "metrics": [
+      "必要步骤完成率",
+      "工具业务成功率",
+      "预算一致性",
+      "完整方案交付率"
+    ]
+  }
+}
