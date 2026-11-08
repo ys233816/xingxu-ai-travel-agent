@@ -2,6 +2,19 @@
 
 一个面向 AI 产品经理作品集的网页端旅行规划 Agent。它把需求解析、工具权限、真实接口来源、失败重试和人工确认放在同一个工作台里，方便面试时展示“模型做决策，工程守边界”。
 
+项目仓库：[ys233816/xingxu-ai-travel-agent](https://github.com/ys233816/xingxu-ai-travel-agent)
+
+## 项目预览
+
+<p align="center">
+  <img src="artifacts/agent-real-plan-desktop.png" alt="行序 AI 桌面端真实规划结果" width="78%">
+</p>
+
+<p align="center">
+  <img src="artifacts/agent-real-plan-mobile.png" alt="行序 AI 移动端真实规划结果" width="32%">
+  <img src="artifacts/evidence-map.png" alt="Agent 轨迹与证据映射" width="42%">
+</p>
+
 ## 本地运行
 
 需要 Node.js 20 或以上版本。先从示例文件创建本地配置：
